@@ -1,0 +1,30 @@
+{
+    "name": "ClearStar - Plugin",
+    "author": "MIS",
+    "version": "1.0",
+    "description": "A browser plugin for Send Request and Create Profile.",
+    "manifest_version": 2,
+    "icons": { 
+        "48": "src/images/icon48.png"
+    },
+
+    "browser_action": {
+        "default_title": "ClearStar - Plugin",
+        "default_icon": "src/images/icon48.png",
+        "default_popup": "src/templates/popup.html"
+    },
+    "permissions": [
+        "bookmarks",
+        "notifications",
+        "storage",
+        "tabs",
+        "cookies",
+        "https://www.youtube.com/*",
+        "https://*/*",
+        "http://*/*"
+    ],
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "web_accessible_resources": [
+        "src/*"
+    ]
+  }
