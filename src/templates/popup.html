@@ -22,7 +22,10 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Donor information</h1>
+      <h1 class="header center orange-text"
+          style="font-size: 3.2rem; margin: 1.8rem 0 1.68rem 0;">
+        Applicant Information
+      </h1>
 
       <div class="row center">
           <div class="row">
@@ -44,6 +47,12 @@
                   </div>
                 </div>
                 <div class="row">
+                  <div class="input-field col s12">
+                    <input id="phone" class="validate">
+                    <label for="phone">Phone</label>
+                  </div>
+                </div>
+                <div class="row">
                     <div class="input-field col s4">
                       <input id="city" type="text" class="validate">
                       <label for="city">City</label>
@@ -62,7 +71,7 @@
       </div>
 
       <div class="row center">
-        <a class="btn-large waves-effect waves-light orange">Send</a>
+        <a id="submit_button" class="btn-large waves-effect waves-light orange">Send</a>
       </div>
       <br><br>
 
@@ -95,9 +104,9 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="js/submit.js"></script>
 
 </body>
 </html>

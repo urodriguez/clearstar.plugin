@@ -23,6 +23,10 @@
         "https://*/*",
         "http://*/*"
     ],
+    "content_scripts": [{
+        "js": ["src/templates/js/jquery-2.1.1.min.js"],
+        "matches": ["http://*/*", "https://*/*"]
+    }],
     "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
     "web_accessible_resources": [
         "src/*"
