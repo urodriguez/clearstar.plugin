@@ -12,3 +12,8 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.footer-logo {
+  width: 100px;
+  float: left;
+}
