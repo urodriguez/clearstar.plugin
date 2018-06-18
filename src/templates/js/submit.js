@@ -47,9 +47,13 @@ function ConvertFormToJSON(){
         address: $('#address').val(),
         city: $('#city').val(),
         state: $('#state').val(),
-        zipCode: $('#zipCode').val(),
+        zipCode: $('#zipCode').val()
+    }
+
+    var model = {
+        donorInformation: donorInformation,
         serviceIds: serviceIds
     }
     
-    return JSON.stringify(donorInformation);
+    return JSON.stringify(model);
 }
