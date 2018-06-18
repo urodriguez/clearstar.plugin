@@ -1,19 +1,40 @@
-$( "#submit_button" ).click(function() {
-
-    M.toast({html: 'Submitting your profile data', classes: 'rounded'});
-
-    setTimeout(function(){
-        var options = {
-            type: "basic",
-            title: "Your profile has been created",
-            message: "Profile number: 123456789",
-            iconUrl: "clearstar.png"
-        };
+$( "#submit_button" ).click(function() {       
+    $.ajax({
+        url: "http://localhost/ClearStar.MIS.Services/Plugin/CreateProfile",
+        contentType: "application/json",
+        type: "POST",
+        data: ConvertFormToJSON(),
+        success: function (result) {
+            var options = {
+                type: "basic",
+                title: "Your profile has been created",
+                message: "Profile number: " + result,
+                iconUrl: "clearstar.png"
+            };
+            
+            chrome.notifications.create(options, callback);
         
-        chrome.notifications.create(options, callback);
-    
-        function callback() {
-            //alert("work")
+            function callback() {
+                //alert("work")
+            }
         }
-    }, 3000)
+    });    
 });
+
+function ConvertFormToJSON(){
+    var donorInformation = {
+        ssn: $('#ssn').val(),
+        firstName: $('#firstName').val(),
+        lastName: $('#lastName').val(),
+        gender: $('#gender').val(),
+        dateOfBirth: $('#dateOfBirth').val(),
+        dayPhone: $('#dayPhone').val(),
+        email: $('#email').val(),
+        address: $('#address').val(),
+        city: $('#city').val(),
+        state: $('#state').val(),
+        zipCode: $('#zipCode').val()
+    }
+    
+    return JSON.stringify(donorInformation);
+}

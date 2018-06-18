@@ -29,15 +29,15 @@
 
       <div class="row center">
           <div class="row">
-              <form class="col s12">
+              <form id="profileForm" class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+                    <input id="firstName" type="text" class="validate">
+                    <label for="firstName">First Name</label>
                   </div>
                   <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                    <input id="lastName" type="text" class="validate">
+                    <label for="lastName">Last Name</label>
                   </div>
                 </div>
                 <div class="row">
@@ -50,17 +50,24 @@
                     <label for="gender">Gender</label>
                   </div>
                   <div class="input-field col s4">
-                    <input type="text" class="datepicker">
+                    <input id="dateOfBirth" type="text" class="datepicker">
+                    <label for="dateOfBirth">Date Of Birth</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s6">
-                    <input id="phone" class="validate">
-                    <label for="phone">Phone</label>
+                    <input id="dayPhone" class="validate">
+                    <label for="dayPhone">Phone</label>
                   </div>
                   <div class="input-field col s6">
                     <input id="email" type="email" class="validate">
                     <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="address" type="text" class="validate">
+                    <label for="address">Address</label>
                   </div>
                 </div>
                 <div class="row">
@@ -73,8 +80,8 @@
                       <label for="state">State</label>
                     </div>
                     <div class="input-field col s4">
-                      <input id="zip_code" type="text" class="validate">
-                      <label for="zip_code">Zip Code</label>
+                      <input id="zipCode" type="text" class="validate">
+                      <label for="zipCode">Zip Code</label>
                     </div>
                   </div>
               </form>
