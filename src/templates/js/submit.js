@@ -22,6 +22,20 @@ $( "#submit_button" ).click(function() {
 });
 
 function ConvertFormToJSON(){
+    var serviceIds = ""
+
+    if ($('#empVerif').is(":checked")) {
+        serviceIds += "GWDE_00016"
+    }
+
+    if ($('#eduVerif').is(":checked")) {
+        if (serviceIds != "") {
+            serviceIds += ",GWDE_00017"
+        } else {
+            serviceIds += "GWDE_00017"
+        }
+    }
+
     var donorInformation = {
         ssn: $('#ssn').val(),
         firstName: $('#firstName').val(),
@@ -33,7 +47,8 @@ function ConvertFormToJSON(){
         address: $('#address').val(),
         city: $('#city').val(),
         state: $('#state').val(),
-        zipCode: $('#zipCode').val()
+        zipCode: $('#zipCode').val(),
+        serviceIds: serviceIds
     }
     
     return JSON.stringify(donorInformation);

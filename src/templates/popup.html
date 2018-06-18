@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
 </head>
 
 <body style="width: 640px">
@@ -29,7 +30,7 @@
 
       <div class="row center">
           <div class="row">
-              <form id="profileForm" class="col s12">
+              <form id="profileForm" class="col s12" action="createProfile">
                 <div class="row">
                   <div class="input-field col s6">
                     <input id="firstName" type="text" class="validate">
@@ -56,7 +57,7 @@
                 </div>
                 <div class="row">
                   <div class="input-field col s6">
-                    <input id="dayPhone" class="validate">
+                    <input id="dayPhone" type="text" class="validate">
                     <label for="dayPhone">Phone</label>
                   </div>
                   <div class="input-field col s6">
@@ -83,15 +84,41 @@
                       <input id="zipCode" type="text" class="validate">
                       <label for="zipCode">Zip Code</label>
                     </div>
-                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <p>
+                            <label>
+                              <input id="empVerif" type="checkbox" />
+                              <span> <strong> Employment Verification </strong> </span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="input-field col s6">
+                        <p>
+                            <label>
+                              <input id="eduVerif" type="checkbox" />
+                              <span> <strong> Education Verification </strong> </span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+              
               </form>
+
             </div>
       </div>
 
-      <div class="row center">
-        <a id="submit_button" class="btn-large waves-effect waves-light orange">Send</a>
+      <div class="row center" style="margin-bottom: 64px">
+          <button class="btn-large waves-effect waves-light orange" 
+                  type="submit" 
+                  name="action"
+                  id="submit_button">Submit
+                  <i class="material-icons right">send</i>
+          </button>
+          <br><br>
       </div>
-      <br><br>
 
     </div>
   </div>
