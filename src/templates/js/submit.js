@@ -3,14 +3,14 @@ $( "#fill_button" ).click(function() {
         ssn: "123456789",
         firstName: "Uciel",
         lastName: "Rodriguez",
-        gender: "m",
+        gender: "M",
         dateOfBirth: "Jun 20, 1968",
-        dayPhone: "11-3214-9874",
+        dayPhone: "111111111",
         email: "Uciel.Rodriguez@endava.com",
         address: "Villa Devoto, adentro",
-        city: "CABA",
-        state: "CABA",
-        zipCode: "1001"
+        city: "Miami",
+        state: "FL",
+        zipCode: "90210"
     }
     $('#ssn').val(donorInformation.ssn);
     $('#firstName').val(donorInformation.firstName);
