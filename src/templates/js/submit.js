@@ -28,7 +28,8 @@ $( "#fill_button" ).click(function() {
 
 });
 
-$( "#submit_button" ).click(function() {       
+$( "#submit_button" ).click(function() {
+    $("#progress").show();      
     $.ajax({
         url: "http://localhost/ClearStar.MIS.Services/Plugin/CreateProfile",
         contentType: "application/json",
@@ -43,9 +44,10 @@ $( "#submit_button" ).click(function() {
             };
             
             chrome.notifications.create(options, callback);
-        
+
             function callback() {
-                //alert("work")
+                $("#pbar").toggleClass("determinate");
+                $("#pbar").width('100%');
             }
         }
     });    
