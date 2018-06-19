@@ -1,3 +1,33 @@
+$( "#fill_button" ).click(function() {       
+    var donorInformation = { 
+        ssn: "123456789",
+        firstName: "Uciel",
+        lastName: "Rodriguez",
+        gender: "m",
+        dateOfBirth: "Jun 20, 1968",
+        dayPhone: "11-3214-9874",
+        email: "Uciel.Rodriguez@endava.com",
+        address: "Villa Devoto, adentro",
+        city: "CABA",
+        state: "CABA",
+        zipCode: "1001"
+    }
+    $('#ssn').val(donorInformation.ssn);
+    $('#firstName').val(donorInformation.firstName);
+    $('#lastName').val(donorInformation.lastName);
+    $('#gender').val(donorInformation.gender);
+    $('#dateOfBirth').val(donorInformation.dateOfBirth);
+    $('#dayPhone').val(donorInformation.dayPhone);
+    $('#email').val(donorInformation.email);
+    $('#address').val(donorInformation.address);
+    $('#city').val(donorInformation.city);
+    $('#state').val(donorInformation.state);
+    $('#zipCode').val(donorInformation.zipCode);
+    
+    M.updateTextFields();
+
+});
+
 $( "#submit_button" ).click(function() {       
     $.ajax({
         url: "http://localhost/ClearStar.MIS.Services/Plugin/CreateProfile",
