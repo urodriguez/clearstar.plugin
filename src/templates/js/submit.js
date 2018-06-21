@@ -1,30 +1,42 @@
 $( "#fill_button" ).click(function() {       
-    var donorInformation = { 
-        ssn: "123456789",
-        firstName: "Uciel",
-        lastName: "Rodriguez",
-        gender: "M",
-        dateOfBirth: "Jun 20, 1968",
-        dayPhone: "111111111",
-        email: "Uciel.Rodriguez@endava.com",
-        address: "Villa Devoto, adentro",
-        city: "Miami",
-        state: "FL",
-        zipCode: "90210"
-    }
-    $('#ssn').val(donorInformation.ssn);
-    $('#firstName').val(donorInformation.firstName);
-    $('#lastName').val(donorInformation.lastName);
-    $('#gender').val(donorInformation.gender);
-    $('#dateOfBirth').val(donorInformation.dateOfBirth);
-    $('#dayPhone').val(donorInformation.dayPhone);
-    $('#email').val(donorInformation.email);
-    $('#address').val(donorInformation.address);
-    $('#city').val(donorInformation.city);
-    $('#state').val(donorInformation.state);
-    $('#zipCode').val(donorInformation.zipCode);
+
+    // var port = chrome.runtime.connect();
+    // window.postMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
+
     
-    M.updateTextFields();
+    var lastTabId = -1;
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        lastTabId = tabs[0].id;
+        chrome.tabs.sendMessage(lastTabId, "Background page started.", function (donorInformation){
+            // var donorInformation = { 
+            //     ssn: "123456789",
+            //     firstName: "Uciel",
+            //     lastName: "Rodriguez",
+            //     gender: "M",
+            //     dateOfBirth: "Jun 20, 1968",
+            //     dayPhone: "111111111",
+            //     email: "Uciel.Rodriguez@endava.com",
+            //     address: "Villa Devoto, adentro",
+            //     city: "Miami",
+            //     state: "FL",
+            //     zipCode: "90210"
+
+            $('#ssn').val(donorInformation.ssn);
+            $('#firstName').val(donorInformation.firstName);
+            $('#lastName').val(donorInformation.lastName);
+            $('#gender').val(donorInformation.gender);
+            $('#dateOfBirth').val(donorInformation.dateOfBirth);
+            $('#dayPhone').val(donorInformation.dayPhone);
+            $('#email').val(donorInformation.email);
+            $('#address').val(donorInformation.address);
+            $('#city').val(donorInformation.city);
+            $('#state').val(donorInformation.state);
+            $('#zipCode').val(donorInformation.zipCode);
+            
+            M.updateTextFields();
+        
+        });
+      });
 
 });
 

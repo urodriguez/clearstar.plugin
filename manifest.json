@@ -18,17 +18,22 @@
         "notifications",
         "storage",
         "tabs",
+        "activeTab",
         "cookies",
         "https://www.youtube.com/*",
         "https://*/*",
         "http://*/*"
     ],
     "content_scripts": [{
-        "js": ["src/templates/js/jquery-2.1.1.min.js"],
-        "matches": ["http://*/*", "https://*/*"]
+        "js": ["src/templates/js/jquery-2.1.1.min.js", "src/templates/js/content.js"],
+        "matches": ["https://www.linkedin.com/*"],
+        "run_at": "document_idle"
     }],
     "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
     "web_accessible_resources": [
         "src/*"
-    ]
+    ],
+    "externally_connectable": {
+        "matches": ["https://www.linkedin.com/*"]
+      }
   }

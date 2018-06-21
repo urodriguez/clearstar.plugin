@@ -1,0 +1,10 @@
+$(document).ready(function(){
+<<<<<<< Updated upstream
+  $('.datepicker').datepicker({
+    yearRange: 60 // Creates a dropdown of 15 years to control year
+  });
+=======
+  $('.datepicker').datepicker();
+  
+>>>>>>> Stashed changes
+});
